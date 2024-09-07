@@ -14,8 +14,9 @@
     },
     "link": {
       "type": "component",
-      "repeatable": false,
-      "component": "elements.button-link"
+      "repeatable": true,
+      "component": "elements.button-link",
+      "max": 2
     },
     "image": {
       "type": "media",
