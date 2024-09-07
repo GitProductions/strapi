@@ -1,12 +1,13 @@
 {
   "collectionName": "components_blocks_heroes",
   "info": {
-    "displayName": "Hero"
+    "displayName": "Hero",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "heading": {
-      "type": "string"
+      "type": "text"
     },
     "text": {
       "type": "text"
@@ -17,11 +18,12 @@
       "component": "elements.button-link"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }
