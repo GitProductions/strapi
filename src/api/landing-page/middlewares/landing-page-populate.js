@@ -26,6 +26,9 @@ const populate = {
           image: {
             fields: ["name", "alternativeText", "url"],
             },
+          description: {
+            fields: ["*"],
+            },
           }
         },
     plan: {
