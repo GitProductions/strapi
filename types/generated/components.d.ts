@@ -21,7 +21,13 @@ export interface BlocksHero extends Schema.Component {
   attributes: {
     heading: Attribute.Text;
     text: Attribute.Text;
-    link: Attribute.Component<'elements.button-link'>;
+    link: Attribute.Component<'elements.button-link', true> &
+      Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
     image: Attribute.Media;
     imageQuote: Attribute.Text;
   };
