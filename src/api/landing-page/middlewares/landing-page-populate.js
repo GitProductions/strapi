@@ -26,7 +26,10 @@ const populate = {
           image: {
             fields: ["name", "alternativeText", "url"],
             },
-          description: {
+          descriptionNormal: {
+            fields: ["*"],
+            },
+          descriptionHover: {
             fields: ["*"],
             },
           }

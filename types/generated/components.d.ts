@@ -90,7 +90,8 @@ export interface ElementsCard extends Schema.Component {
   attributes: {
     image: Attribute.Media;
     heading: Attribute.String;
-    description: Attribute.Component<'elements.card-item', true>;
+    descriptionNormal: Attribute.Component<'elements.card-item', true>;
+    descriptionHover: Attribute.Component<'elements.card-item', true>;
   };
 }
 

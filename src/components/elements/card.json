@@ -17,7 +17,12 @@
     "heading": {
       "type": "string"
     },
-    "description": {
+    "descriptionNormal": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.card-item"
+    },
+    "descriptionHover": {
       "type": "component",
       "repeatable": true,
       "component": "elements.card-item"
