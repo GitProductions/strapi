@@ -16,12 +16,14 @@ export interface BlocksHero extends Schema.Component {
   collectionName: 'components_blocks_heroes';
   info: {
     displayName: 'Hero';
+    description: '';
   };
   attributes: {
-    heading: Attribute.String;
+    heading: Attribute.Text;
     text: Attribute.Text;
     link: Attribute.Component<'elements.button-link'>;
     image: Attribute.Media;
+    imageQuote: Attribute.Text;
   };
 }
 
