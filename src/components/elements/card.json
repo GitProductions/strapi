@@ -1,22 +1,26 @@
 {
   "collectionName": "components_elements_cards",
   "info": {
-    "displayName": "Card"
+    "displayName": "Card",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "heading": {
       "type": "string"
     },
     "description": {
-      "type": "text"
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.card-item"
     }
   }
 }

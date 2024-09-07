@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_elements_card_items",
+  "info": {
+    "displayName": "CardItem",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  }
+}

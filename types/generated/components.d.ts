@@ -49,9 +49,11 @@ export interface BlocksRow extends Schema.Component {
   collectionName: 'components_blocks_rows';
   info: {
     displayName: 'Row';
+    description: '';
   };
   attributes: {
     card: Attribute.Component<'elements.card', true>;
+    cardDescription: Attribute.Component<'elements.card-item', true>;
   };
 }
 
@@ -68,15 +70,27 @@ export interface ElementsButtonLink extends Schema.Component {
   };
 }
 
+export interface ElementsCardItem extends Schema.Component {
+  collectionName: 'components_elements_card_items';
+  info: {
+    displayName: 'CardItem';
+    description: '';
+  };
+  attributes: {
+    text: Attribute.Text;
+  };
+}
+
 export interface ElementsCard extends Schema.Component {
   collectionName: 'components_elements_cards';
   info: {
     displayName: 'Card';
+    description: '';
   };
   attributes: {
     image: Attribute.Media;
     heading: Attribute.String;
-    description: Attribute.Text;
+    description: Attribute.Component<'elements.card-item', true>;
   };
 }
 
@@ -143,6 +157,7 @@ declare module '@strapi/types' {
       'blocks.pricing': BlocksPricing;
       'blocks.row': BlocksRow;
       'elements.button-link': ElementsButtonLink;
+      'elements.card-item': ElementsCardItem;
       'elements.card': ElementsCard;
       'elements.form': ElementsForm;
       'elements.input': ElementsInput;
