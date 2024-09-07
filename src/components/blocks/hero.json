@@ -24,6 +24,9 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "imageQuote": {
+      "type": "text"
     }
   }
 }
