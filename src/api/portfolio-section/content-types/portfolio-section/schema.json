@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "portfolio_sections",
+  "info": {
+    "singularName": "portfolio-section",
+    "pluralName": "portfolio-sections",
+    "displayName": "portfolioSection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Card": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.dev-card"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "portfolio": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::portfolio.portfolio",
+      "inversedBy": "portfolio_section"
+    }
+  }
+}

@@ -1,7 +1,8 @@
 {
   "collectionName": "components_elements_inputs",
   "info": {
-    "displayName": "Input"
+    "displayName": "Input",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,9 +10,6 @@
       "type": "string"
     },
     "label": {
-      "type": "string"
-    },
-    "inputType": {
       "type": "string"
     }
   }

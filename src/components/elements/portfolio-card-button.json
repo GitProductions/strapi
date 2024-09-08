@@ -1,13 +1,14 @@
 {
-  "collectionName": "components_elements_button_links",
+  "collectionName": "components_elements_portfolio_card_buttons",
   "info": {
-    "displayName": "Button Link",
+    "displayName": "PortfolioCardButton",
     "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "default": "View Project"
     },
     "link": {
       "type": "string"
@@ -21,17 +22,8 @@
       "enum": [
         "PRIMARY",
         "SECONDARY"
-      ]
-    },
-    "Images": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
       ],
-      "type": "media",
-      "multiple": true
+      "default": "SECONDARY"
     }
   }
 }

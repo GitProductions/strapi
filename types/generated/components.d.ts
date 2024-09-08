@@ -61,12 +61,14 @@ export interface ElementsButtonLink extends Schema.Component {
   collectionName: 'components_elements_button_links';
   info: {
     displayName: 'Button Link';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
     link: Attribute.String;
     isExternal: Attribute.Boolean & Attribute.DefaultTo<false>;
     type: Attribute.Enumeration<['PRIMARY', 'SECONDARY']>;
+    Images: Attribute.Media;
   };
 }
 
@@ -95,6 +97,22 @@ export interface ElementsCard extends Schema.Component {
   };
 }
 
+export interface ElementsDevCard extends Schema.Component {
+  collectionName: 'components_elements_dev_cards';
+  info: {
+    displayName: 'PortfolioCard';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
+    descriptionLong: Attribute.Text;
+    Image: Attribute.Media;
+    Button: Attribute.Component<'elements.portfolio-card-button'>;
+    isFeatured: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
 export interface ElementsForm extends Schema.Component {
   collectionName: 'components_elements_forms';
   info: {
@@ -112,11 +130,26 @@ export interface ElementsInput extends Schema.Component {
   collectionName: 'components_elements_inputs';
   info: {
     displayName: 'Input';
+    description: '';
   };
   attributes: {
     placeholder: Attribute.String;
     label: Attribute.String;
-    inputType: Attribute.String;
+  };
+}
+
+export interface ElementsPortfolioCardButton extends Schema.Component {
+  collectionName: 'components_elements_portfolio_card_buttons';
+  info: {
+    displayName: 'PortfolioCardButton';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.DefaultTo<'View Project'>;
+    link: Attribute.String;
+    isExternal: Attribute.Boolean & Attribute.DefaultTo<false>;
+    type: Attribute.Enumeration<['PRIMARY', 'SECONDARY']> &
+      Attribute.DefaultTo<'SECONDARY'>;
   };
 }
 
@@ -160,8 +193,10 @@ declare module '@strapi/types' {
       'elements.button-link': ElementsButtonLink;
       'elements.card-item': ElementsCardItem;
       'elements.card': ElementsCard;
+      'elements.dev-card': ElementsDevCard;
       'elements.form': ElementsForm;
       'elements.input': ElementsInput;
+      'elements.portfolio-card-button': ElementsPortfolioCardButton;
       'elements.pricing-card': ElementsPricingCard;
       'seo.meta-data': SeoMetaData;
     }
