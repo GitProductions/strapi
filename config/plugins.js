@@ -28,6 +28,6 @@ module.exports = ({ env }) => ({
       apolloServer: {
         tracing: true,
       },
-    }
-  }
+    },
+  },
 });
