@@ -108,7 +108,7 @@ export interface ElementsDevCard extends Schema.Component {
     description: Attribute.Text;
     descriptionLong: Attribute.Text;
     Image: Attribute.Media;
-    Button: Attribute.Component<'elements.portfolio-card-button'>;
+    Button: Attribute.Component<'elements.portfolio-card-button', true>;
     isFeatured: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }

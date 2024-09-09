@@ -26,7 +26,7 @@
     },
     "Button": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "elements.portfolio-card-button"
     },
     "isFeatured": {
