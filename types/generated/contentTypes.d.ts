@@ -788,39 +788,6 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
-export interface ApiGraphicDesignGraphicDesign extends Schema.SingleType {
-  collectionName: 'graphic_designs';
-  info: {
-    singularName: 'graphic-design';
-    pluralName: 'graphic-designs';
-    displayName: 'Graphic Design';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Button: Attribute.Component<'elements.button-link', true>;
-    Card: Attribute.Component<'elements.card', true>;
-    name: Attribute.String;
-    slug: Attribute.UID<'api::graphic-design.graphic-design', 'name'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::graphic-design.graphic-design',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::graphic-design.graphic-design',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiLandingPageLandingPage extends Schema.CollectionType {
   collectionName: 'landing_pages';
   info: {
@@ -840,6 +807,7 @@ export interface ApiLandingPageLandingPage extends Schema.CollectionType {
     blocks: Attribute.DynamicZone<
       ['blocks.hero', 'blocks.row', 'blocks.pricing', 'blocks.cta']
     >;
+    Socials: Attribute.Component<'blocks.socials-bar'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -851,43 +819,6 @@ export interface ApiLandingPageLandingPage extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::landing-page.landing-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiPortfolioPortfolio extends Schema.CollectionType {
-  collectionName: 'portfolios';
-  info: {
-    singularName: 'portfolio';
-    pluralName: 'portfolios';
-    displayName: 'Portfolio';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    button: Attribute.Component<'elements.button-link', true>;
-    portfolio_section: Attribute.Relation<
-      'api::portfolio.portfolio',
-      'oneToOne',
-      'api::portfolio-section.portfolio-section'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::portfolio.portfolio',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::portfolio.portfolio',
       'oneToOne',
       'admin::user'
     > &
@@ -910,11 +841,7 @@ export interface ApiPortfolioSectionPortfolioSection
   attributes: {
     Card: Attribute.Component<'elements.dev-card', true>;
     title: Attribute.String & Attribute.Required;
-    portfolio: Attribute.Relation<
-      'api::portfolio-section.portfolio-section',
-      'oneToOne',
-      'api::portfolio.portfolio'
-    >;
+    url: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1016,9 +943,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
-      'api::graphic-design.graphic-design': ApiGraphicDesignGraphicDesign;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
-      'api::portfolio.portfolio': ApiPortfolioPortfolio;
       'api::portfolio-section.portfolio-section': ApiPortfolioSectionPortfolioSection;
       'api::service.service': ApiServiceService;
       'api::social.social': ApiSocialSocial;

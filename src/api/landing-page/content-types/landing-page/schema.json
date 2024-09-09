@@ -35,6 +35,11 @@
         "blocks.pricing",
         "blocks.cta"
       ]
+    },
+    "Socials": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.socials-bar"
     }
   }
 }

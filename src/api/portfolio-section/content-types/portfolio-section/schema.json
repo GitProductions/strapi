@@ -21,11 +21,8 @@
       "type": "string",
       "required": true
     },
-    "portfolio": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::portfolio.portfolio",
-      "inversedBy": "portfolio_section"
+    "url": {
+      "type": "string"
     }
   }
 }
