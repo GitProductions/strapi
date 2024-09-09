@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "socials",
+  "info": {
+    "singularName": "social",
+    "pluralName": "socials",
+    "displayName": "Social",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "SocialMediaSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.socials-bar"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_blocks_socials_bars",
+  "info": {
+    "displayName": "Socials-Bar"
+  },
+  "options": {},
+  "attributes": {
+    "SocialMedia": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.social-icon"
+    }
+  }
+}

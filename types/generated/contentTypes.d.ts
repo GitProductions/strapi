@@ -967,6 +967,37 @@ export interface ApiServiceService extends Schema.CollectionType {
   };
 }
 
+export interface ApiSocialSocial extends Schema.SingleType {
+  collectionName: 'socials';
+  info: {
+    singularName: 'social';
+    pluralName: 'socials';
+    displayName: 'Social';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    SocialMediaSection: Attribute.Component<'blocks.socials-bar'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::social.social',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::social.social',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -990,6 +1021,7 @@ declare module '@strapi/types' {
       'api::portfolio.portfolio': ApiPortfolioPortfolio;
       'api::portfolio-section.portfolio-section': ApiPortfolioSectionPortfolioSection;
       'api::service.service': ApiServiceService;
+      'api::social.social': ApiSocialSocial;
     }
   }
 }

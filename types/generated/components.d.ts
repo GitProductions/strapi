@@ -57,6 +57,16 @@ export interface BlocksRow extends Schema.Component {
   };
 }
 
+export interface BlocksSocialsBar extends Schema.Component {
+  collectionName: 'components_blocks_socials_bars';
+  info: {
+    displayName: 'Socials-Bar';
+  };
+  attributes: {
+    SocialMedia: Attribute.Component<'elements.social-icon', true>;
+  };
+}
+
 export interface ElementsButtonLink extends Schema.Component {
   collectionName: 'components_elements_button_links';
   info: {
@@ -171,6 +181,19 @@ export interface ElementsPricingCard extends Schema.Component {
   };
 }
 
+export interface ElementsSocialIcon extends Schema.Component {
+  collectionName: 'components_elements_social_icons';
+  info: {
+    displayName: 'Social-Icon';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    url: Attribute.String;
+    image: Attribute.Media;
+  };
+}
+
 export interface SeoMetaData extends Schema.Component {
   collectionName: 'components_seo_meta_data';
   info: {
@@ -190,6 +213,7 @@ declare module '@strapi/types' {
       'blocks.hero': BlocksHero;
       'blocks.pricing': BlocksPricing;
       'blocks.row': BlocksRow;
+      'blocks.socials-bar': BlocksSocialsBar;
       'elements.button-link': ElementsButtonLink;
       'elements.card-item': ElementsCardItem;
       'elements.card': ElementsCard;
@@ -198,6 +222,7 @@ declare module '@strapi/types' {
       'elements.input': ElementsInput;
       'elements.portfolio-card-button': ElementsPortfolioCardButton;
       'elements.pricing-card': ElementsPricingCard;
+      'elements.social-icon': ElementsSocialIcon;
       'seo.meta-data': SeoMetaData;
     }
   }
