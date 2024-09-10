@@ -21,8 +21,15 @@
       "type": "string",
       "required": true
     },
-    "url": {
-      "type": "string"
+    "portfolioType": {
+      "type": "enumeration",
+      "enum": [
+        "card",
+        "carousel",
+        "gallery"
+      ],
+      "required": true,
+      "default": "gallery"
     }
   }
 }

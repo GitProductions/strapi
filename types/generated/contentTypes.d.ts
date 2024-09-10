@@ -841,7 +841,9 @@ export interface ApiPortfolioSectionPortfolioSection
   attributes: {
     Card: Attribute.Component<'elements.dev-card', true>;
     title: Attribute.String & Attribute.Required;
-    url: Attribute.String;
+    portfolioType: Attribute.Enumeration<['card', 'carousel', 'gallery']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'gallery'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
