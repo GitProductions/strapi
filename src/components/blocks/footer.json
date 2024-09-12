@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_footers",
+  "info": {
+    "displayName": "Footer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Copyright": {
+      "type": "string"
+    },
+    "Socials": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.socials-bar"
+        }
+  }
+}

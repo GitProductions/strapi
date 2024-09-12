@@ -8,7 +8,20 @@ export interface BlocksCta extends Schema.Component {
   attributes: {
     heading: Attribute.String;
     description: Attribute.Text;
+    image: Attribute.Media;
     form: Attribute.Component<'elements.form'>;
+  };
+}
+
+export interface BlocksFooter extends Schema.Component {
+  collectionName: 'components_blocks_footers';
+  info: {
+    displayName: 'Footer';
+    description: '';
+  };
+  attributes: {
+    Copyright: Attribute.String;
+    Socials: Attribute.Component<'blocks.socials-bar'>;
   };
 }
 
@@ -210,6 +223,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'blocks.cta': BlocksCta;
+      'blocks.footer': BlocksFooter;
       'blocks.hero': BlocksHero;
       'blocks.pricing': BlocksPricing;
       'blocks.row': BlocksRow;
