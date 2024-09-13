@@ -17,6 +17,12 @@
     },
     "description": {
       "type": "string"
+    },
+    "blog": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::blog.blog",
+      "inversedBy": "categories"
     }
   }
 }

@@ -794,6 +794,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     singularName: 'blog';
     pluralName: 'blogs';
     displayName: 'Blog';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -804,6 +805,11 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     slug: Attribute.UID<'api::blog.blog', 'title'>;
     image: Attribute.Media;
     content: Attribute.RichText;
+    categories: Attribute.Relation<
+      'api::blog.blog',
+      'oneToMany',
+      'api::category.category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -828,6 +834,11 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   attributes: {
     text: Attribute.String;
     description: Attribute.String;
+    blog: Attribute.Relation<
+      'api::category.category',
+      'manyToOne',
+      'api::blog.blog'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
