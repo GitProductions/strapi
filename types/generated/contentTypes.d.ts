@@ -807,7 +807,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     content: Attribute.RichText;
     categories: Attribute.Relation<
       'api::blog.blog',
-      'oneToMany',
+      'manyToMany',
       'api::category.category'
     >;
     createdAt: Attribute.DateTime;
@@ -834,9 +834,9 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   attributes: {
     text: Attribute.String;
     description: Attribute.String;
-    blog: Attribute.Relation<
+    blogs: Attribute.Relation<
       'api::category.category',
-      'manyToOne',
+      'manyToMany',
       'api::blog.blog'
     >;
     createdAt: Attribute.DateTime;

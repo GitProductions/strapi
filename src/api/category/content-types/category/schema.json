@@ -18,11 +18,11 @@
     "description": {
       "type": "string"
     },
-    "blog": {
+    "blogs": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::blog.blog",
-      "inversedBy": "categories"
+      "mappedBy": "categories"
     }
   }
 }
